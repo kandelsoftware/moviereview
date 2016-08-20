@@ -1,0 +1,25 @@
+%h1 listing movies
+%table
+  %thead
+    %tr
+      %th Title
+      %th Description
+      %th Movie_length
+      %th Rating
+      %th Director
+  
+  %tbody
+  -@movies.each do |movie|
+    %tr
+      %td=movie.title
+      %td=movie.description
+      %td=movie.movie_length
+      %td=movie.rating
+      %td=movie.director
+      %td=link_to "show", movie
+      %td=link_to "edit", edit_movie_path(movie)
+      %th=link_to "delete",method: :destroy,data:{confirm: "Are you sure"} 
+
+
+
+ 
